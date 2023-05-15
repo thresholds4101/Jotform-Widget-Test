@@ -18,10 +18,10 @@
     </div>
 
     <script type="text/javascript">
-        let label = JFCustomWidget.subscribe("ready", function () {
+        JFCustomWidget.subscribe("ready", function () {
 
             console.log('here')
-            document.querySelector('#labelText').innerHTML = label
+            document.querySelector('#labelText').innerHTML = 'Label from JS'
 
             JFCustomWidget.subscribe("submit", function () {
 
