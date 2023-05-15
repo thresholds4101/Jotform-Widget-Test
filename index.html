@@ -11,14 +11,14 @@
 
 <body>
 
-    <div id="main"></div>
-    <h3>Form Notifications</h3>
-    <span id="labelText"></span>
-    <input type="text" id="userInput">
-
+    <div id="main">
+        <h3>Form Notifications</h3>
+        <span id="labelText"></span>
+        <input type="text" id="userInput">
+    </div>
 
     <script type="text/javascript">
-        let label = JFCustomWidget.getWidgetSetting("ready", function () {
+        let label = JFCustomWidget.subscribe("ready", function () {
 
             console.log('here')
             document.querySelector('#labelText').innerHTML = label
