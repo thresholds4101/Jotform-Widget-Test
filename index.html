@@ -17,7 +17,25 @@
     <input type="text" id="userInput">
 
 
-    <script src="app.js"></script>
+    <script type="text/javascript">
+        let label = JFCustomWidget.getWidgetSetting("ready", function () {
+
+            console.log('here')
+            document.querySelector('#labelText').innerHTML = label
+
+            JFCustomWidget.subscribe("submit", function () {
+
+                let msg = {
+                    valid: true,
+                    value: document.querySelector('#userInput').value
+                }
+
+                JFCustomWidget.sendSubmit(msg)
+
+            })
+
+        })
+    </script>
 </body>
 
 </html>
