@@ -13,7 +13,6 @@
 
     <div id="main">
         <h3>Form Notifications</h3>
-        <span id="labelText"></span>
         <input type="text" id="userInput">
         <select name="userDrop" id="userDrop">
             <option value="First.Option@thresholds.org">First Option</option>
@@ -26,16 +25,15 @@
         JFCustomWidget.subscribe("ready", function () {
 
             console.log('here')
-            document.querySelector('#labelText').innerHTML = 'Label from JS'
 
             JFCustomWidget.subscribe("submit", function () {
 
                 let msg = {
                     valid: true,
-                    value: [document.querySelector('#userDrop').value, document.querySelector('#userInput').value]
+                    value: [document.querySelector('#userInput').value, document.querySelector('#userDrop').value]
                 }
 
-                JFCustomWidget.setFieldsValueById('input_4', document.querySelector('#userDrop').value)
+                //JFCustomWidget.setFieldsValueById('input_4', document.querySelector('#userDrop').value)
 
                 JFCustomWidget.sendSubmit(msg)
 
