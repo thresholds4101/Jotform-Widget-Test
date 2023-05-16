@@ -16,9 +16,9 @@
         <span id="labelText"></span>
         <input type="text" id="userInput">
         <select name="userDrop" id="userDrop">
-            <option value="First">First</option>
-            <option value="Second">Second</option>
-            <option value="Third">Third</option>
+            <option value="First.Option@thresholds.org">First Option</option>
+            <option value="Second.Option@thresholds.org">Second Option</option>
+            <option value="Third.Option@thresholds.org">Third Option</option>
         </select>
     </div>
 
@@ -32,16 +32,10 @@
 
                 let msg = {
                     valid: true,
-                    value: document.querySelector('#userInput').value
-                }
-                
-                let msg2 = {
-                    valid: true,
-                    value: document.querySelector('#userDrop').value
+                    value: [document.querySelector('#userDrop').value, document.querySelector('#userInput').value]
                 }
 
                 JFCustomWidget.sendSubmit(msg)
-                JFCustomWidget.sendSubmit(msg2)
 
             })
 
