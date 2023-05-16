@@ -15,6 +15,11 @@
         <h3>Form Notifications</h3>
         <span id="labelText"></span>
         <input type="text" id="userInput">
+        <select name="userDrop" id="userDrop">
+            <option value="First">First</option>
+            <option value="Second">Second</option>
+            <option value="Third">Third</option>
+        </select>
     </div>
 
     <script type="text/javascript">
@@ -29,8 +34,14 @@
                     valid: true,
                     value: document.querySelector('#userInput').value
                 }
+                
+                let msg2 = {
+                    valid: true,
+                    value: document.querySelector('#userDrop').value
+                }
 
                 JFCustomWidget.sendSubmit(msg)
+                JFCustomWidget.sendSubmit(msg2)
 
             })
 
