@@ -8,7 +8,27 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <input type=text></input>
+    <input type=text id="secondInput"></input>
     <button>Different Page</button>
+  <script type="text/javascript">
+        JFCustomWidget.subscribe("ready", function () {
+
+            console.log('here')
+
+            JFCustomWidget.subscribe("submit", function () {
+
+                let msg = {
+                    valid: true,
+                    value: document.querySelector('#secondInput').value
+                }
+
+                //JFCustomWidget.setFieldsValueById('input_4', document.querySelector('#userDrop').value)
+
+                JFCustomWidget.sendSubmit(msg)
+
+            })
+
+        })
+    </script>
   </body>
 </html>
